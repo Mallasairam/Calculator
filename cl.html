@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script>
+            function add(){
+                var x=0,b=0;
+                x=calculator.display.value;
+                b=x.charAt(x.length-1);
+                if(b=='+' || b=='-' || b=='/' || b=='*'){
+                    calculator.display.value=x.substring(0,x.length-1);
+                    calculator.display.value+='+';
+                }
+                else{
+                    calculator.display.value+='+';
+                }
+            }
+            function sub(){
+                var x=0,b=0;
+                x=calculator.display.value;
+                b=x.charAt(x.length-1);
+                if(b=='+' || b=='-' || b=='/' || b=='*'){
+                    calculator.display.value=x.substring(0,x.length-1);
+                    calculator.display.value+='-';
+                }
+                else{
+                    calculator.display.value+='-';
+                }
+            }
+            function di(){
+                var x=0,b=0;
+                x=calculator.display.value;
+                b=x.charAt(x.length-1);
+                if(b=='+' || b=='-' || b=='/' || b=='*'){
+                    calculator.display.value=x.substring(0,x.length-1);
+                    calculator.display.value+='/';
+                }
+                else{
+                    calculator.display.value+='/';
+                }
+            }
+            function mul(){
+                var x=0,b=0;
+                x=calculator.display.value;
+                b=x.charAt(x.length-1);
+                if(b=='+' || b=='-' || b=='/' || b=='*'){
+                    calculator.display.value=x.substring(0,x.length-1);
+                    calculator.display.value+='*';
+                }
+                else{
+                    calculator.display.value+='*';
+                }
+            }
+            function back(){
+                var x=0;
+                x=calculator.display.value;
+                calculator.display.value=x.substring(0,x.length-1);
+                
+                return false;
+            }
+            function change(){
+                var x=document.getElementById("main").className="";
+      return false;
+            }
+        </script>
+        <style>
+            .mn{
+                margin: 300px auto;
+                text-align: center;
+                background-color: silver;
+                height: 220px;
+                width: 20%;
+            }
+            input[type='text']{
+                background-color: yellow;
+                width: 75%;
+            }
+            input[type='button']{
+                font-size: 20px;
+                padding: 5px;
+                margin: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mn" id="main">
+            <form name="calculator">
+                <input type="text" id="display" onclick="" placeholder="0"><br />
+                <input type="button" value="1" onclick="calculator.display.value+=1">
+                <input type="button" value="2" onclick="calculator.display.value+=2">
+                <input type="button" value="3" onclick="calculator.display.value+=3">
+                <input type="button" value="+" onclick="add()">
+                <button onclick=" return back()"><img src="https://tse3.mm.bing.net/th?id=OIP.-ZT5t3mN5bOIjKXgsgNgoAAAAA&pid=Api&P=0&h=180" height="15px" width="15px"></button>
+                <br />
+                <input type="button" value="4" onclick="calculator.display.value+=4">
+                <input type="button" value="5" onclick="calculator.display.value+=5">
+                <input type="button" value="6" onclick="calculator.display.value+=6">
+                <input type="button" value="-" onclick="sub()">
+                <button onclick="return change()"><img src="https://tse2.mm.bing.net/th?id=OIP.prITtSs8X6qq0fJrUZbf2AHaHa&pid=Api&P=0&h=180" height="15px" width="15px"></button>
+
+                <br />
+                <input type="button" value="7" onclick="calculator.display.value+=7">
+                <input type="button" value="8" onclick="calculator.display.value+=8">
+                <input type="button" value="9" onclick="calculator.display.value+=9">
+                <input type="button" value="/" onclick="di()">
+                <input type="button" value="." onclick="calculator.display.value+='.'">
+                <br />
+                <input type="button" value="=" onclick="calculator.display.value=eval(calculator.display.value)">
+                <input type="button" value="0" onclick="calculator.display.value+=0">
+                <input type="button" value="c" onclick="calculator.display.value=''">
+                <input type="button" value="*" onclick="mul()">
+                <input type="button" value="%" onclick="calculator.display.value=eval(calculator.display.value/100)">
+                <br />
+            </form>
+        </div>
+    </body>
+</html>
